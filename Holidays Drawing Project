@@ -1,0 +1,62 @@
+#Aritra Paul
+#12/18/25
+#Holidays  Drawing Project
+
+import simplegui
+import random
+
+# Frame setup
+frame = simplegui.create_frame("Holidays Drawing Project", 600, 400)
+
+#defining the drawing
+def snowman(canvas):
+    
+
+        
+    
+    # background
+    canvas.draw_polygon([(0, 0), (600, 0), (600, 400), (0, 400)], 2, "lightblue", "lightblue")
+    
+    
+    #snow
+    for i in range(10):
+        x = random.randint(0, 600)
+        y = random.randint(0, 400)
+        canvas.draw_circle((x, y), 7, 2, "black", "White")
+        
+        
+    #ground
+    canvas.draw_polygon([(0, 300), (600, 300), (600, 400), (0, 400)], 2, "black", "white")
+    
+    # body 
+    canvas.draw_circle((300, 300), 60, 2, "black", "White")
+    canvas.draw_circle((300, 200), 45, 2, "black", "White")
+    canvas.draw_circle((300, 120), 35, 2, "black", "White")
+    
+    #scarf
+    canvas.draw_polygon([(255, 155), (345, 155), (345, 170), (255, 170)], 2, "black", "red")
+    canvas.draw_polygon([(325, 200), (335, 200), (335, 170), (325, 170)], 2, "black", "red")
+    
+    # arms 
+    canvas.draw_line((255, 200), (190, 170), 4, "Brown")
+    canvas.draw_line((345, 200), (410, 170), 4, "Brown")
+    
+    # eyes
+    canvas.draw_point((288, 115), "Black")
+    canvas.draw_point((312, 115), "Black")
+    
+    # buttons
+    canvas.draw_circle((300, 190), 5, 2, "Black", "Black")
+    canvas.draw_circle((300, 215), 5, 2, "Black", "Black")
+    
+    # nose
+    canvas.draw_polygon([(300, 125), (330, 135), (300, 135)], 2, "black", "Orange")
+    
+    # Hat
+    canvas.draw_polygon([(240, 95), (360, 95), (360, 110), (240, 110)], 2, "black", "black")
+    canvas.draw_polygon([(260, 40), (340, 40), (340, 95), (260, 95)], 2, "black", "black")
+
+
+# Start frame
+frame.set_draw_handler(snowman)
+frame.start()
