@@ -16,13 +16,6 @@ def snowman(canvas):
     
     # background
     canvas.draw_polygon([(0, 0), (600, 0), (600, 400), (0, 400)], 2, "lightblue", "lightblue")
-    
-    
-    #snow
-    for i in range(10):
-        x = random.randint(0, 600)
-        y = random.randint(0, 400)
-        canvas.draw_circle((x, y), 7, 2, "black", "White")
         
         
     #ground
